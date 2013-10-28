@@ -1,4 +1,12 @@
 NonScaffoldedRails::Application.routes.draw do
+
+  root :to => 'info#index'
+              #^Controller#Action 
+
+  match 'about' => 'info#about', :as => 'about'
+
+  match 'contact_us' => 'info#contact_us', :as => 'contact'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
