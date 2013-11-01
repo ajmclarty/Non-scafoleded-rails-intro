@@ -19,8 +19,15 @@ class PostsController < ApplicationController
   	#validation pass we redirect to the index action
   	if (@post.save)
   		redirect_to :action => :index
+  	#validation fails we reuse the view associated 
   	else
   		render :action => :new
   	end 
   end#only loads a view on error otheriwse reads direct
+
+  def destroy
+  	@post = Post.find(params[:id])
+  	@post.destroy
+  	redirect_to :action => :index
+  end
 end
