@@ -5,7 +5,10 @@
 	<h3><%= link_to post.title, post %></h3>
 	<p><%= post.created_at %><p>
 	<p><%= post.content %></p>
-	<p><%= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
+	<p>
+		<%= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+		<%= link_to 'Edit', edit_post_path(post) %>
+	</p>
 <% end %>
 
 <p>
